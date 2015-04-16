@@ -1,0 +1,54 @@
+.col-centered
+{
+    float: none;
+    margin: 0 auto;
+}
+
+.searchWrapper 
+{
+	text-align: center;
+}
+
+.searchWrapper form
+{
+	padding: 15px 0 15px 0;
+}
+
+.peopleList
+{
+	list-style-type: none;
+	text-align: center;
+	padding-left: 0;
+}
+
+.personDetails
+{
+	text-align: left;
+
+}
+
+.personDetails tr td
+{
+	padding: 4px;
+	
+}
+
+.personDetails tr:nth-child(even)
+{
+	background-color: #d6d6d6;
+}
+
+.tableWrapper
+{
+	border: 1px solid grey; 
+	width: 500px; 
+	margin: 0 auto; 
+	border-radius: 10px;
+
+}
+
+.tableWrapper table
+{
+	min-width: 498px;
+	
+}

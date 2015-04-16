@@ -1,0 +1,49 @@
+<!doctype html> 
+<html ng-app="yalePeople">
+	<head>
+		<title>Yale People Search</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>	
+		<script type="text/javascript" src="js/app.js"></script>	
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="container" ng-controller="SearchController as search"> 
+			<div class="searchWrapper row">
+				<div class="col-md-5 col-sm-5 col-xs-7 col-centered">
+					<h2>Yale People Search</h2>
+					<form ng-submit="search()">
+					  <div>
+					    <div class="input-group">
+					      <input type="text" class="form-control" ng-model="name" placeholder="Search for...">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" ng-click="search()" type="button"><span class="glyphicon glyphicon-search"></span></button>
+					      </span>
+					    </div><!-- /input-group -->
+					  </div><!-- /.col-lg-6 -->
+					</form>
+				</div>
+			</div>
+			<div class="resultWrapper row">
+				<div class="col-md-8 col-centered">
+					<ul class="peopleList">
+						<li id="person-{{person.uid}}" ng-repeat="person in people"> 
+							<a href="#" ng-init="show = false" ng-click="show = !show">{{person.cn}}</a>
+							<div class="tableWrapper" ng-show="show == true">
+								<table class="personDetails">
+									<tr ng-repeat="(key, value) in person">
+										<td class="detailKey">{{key}}</td> <td class="detailValue">{{value}}</td>
+									</tr> 
+								</table>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
