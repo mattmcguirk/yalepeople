@@ -13,7 +13,7 @@
 	<body>
 		<div class="container" ng-controller="SearchController as search"> 
 			<div class="searchWrapper row">
-				<div class="col-md-5 col-sm-5 col-xs-7 col-centered">
+				<div class="search col-md-5  col-centered">
 					<h2>Yale People Search</h2>
 					<form ng-submit="search()">
 					  <div>
@@ -28,10 +28,11 @@
 				</div>
 			</div>
 			<div class="resultWrapper row">
-				<div class="col-md-8 col-centered">
+				<div class="col-md-5 col-centered">
 					<ul class="peopleList">
-						<li id="person-{{person.uid}}" ng-repeat="person in people"> 
-							<a href="#" ng-init="show = false" ng-click="show = !show">{{person.cn}}</a>
+						<a href="#" ng-init="show = false" ng-click="show = !show" ng-repeat="person in people">
+							<li id="person-{{person.uid}}"> 
+							{{person.cn}}
 							<div class="tableWrapper" ng-show="show == true">
 								<table class="personDetails">
 									<tr ng-repeat="(key, value) in person">
@@ -40,6 +41,7 @@
 								</table>
 							</div>
 						</li>
+						</a>
 					</ul>
 				</div>
 			</div>
